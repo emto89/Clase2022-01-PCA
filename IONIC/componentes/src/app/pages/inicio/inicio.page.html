@@ -6,12 +6,12 @@
 
 <ion-content>
 
-    <ion-button routerLink="/alert">
-        Alert
-    </ion-button>
+    <ion-list>
+        <ion-item detail="true" [routerLink]="c.redirecTo" *ngFor="let c of componentes">
+            <ion-icon [name]="c.icon" slot="start"></ion-icon>
+            <ion-label>{{c.name}}</ion-label>
+        </ion-item>
+    </ion-list>
 
-    <ion-button routerLink="/action-sheet">
-        Action Sheet
-    </ion-button>
 
 </ion-content>
