@@ -23,6 +23,26 @@ export class InicioPage implements OnInit {
       icon:"person-circle-outline",
       name:"Avatar",
       redirecTo: "/avatar"
+    },
+    {
+      icon:'radio-button-off',
+      name:'Button',
+      redirecTo:'/button'
+    },
+    {
+      icon:'card',
+      name:'Card',
+      redirecTo:'/card'
+    },
+    {
+      icon:'checkmark-circle',
+      name:'CheckBox',
+      redirecTo:'/checkbox'
+    },
+    {
+      icon:'calendar-outline',
+      name:'DateTime',
+      redirecTo:'/datetime'
     }
   ];
 
