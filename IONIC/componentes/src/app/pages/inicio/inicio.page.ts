@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Componente } from 'src/app/interfaces/componentes.interface';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-inicio',
@@ -8,79 +12,17 @@ import { Component, OnInit } from '@angular/core';
 export class InicioPage implements OnInit {
 
 
-  componentes: Componentes[] = [
-    {
-      icon: 'magnet',
-      name: 'Action Sheet',
-      redirecTo: '/action-sheet'
-    },
-    {
-      icon:'alert-circle',
-      name: 'Alert',
-      redirecTo: '/alert'
-    },
-    {
-      icon:"person-circle-outline",
-      name:"Avatar",
-      redirecTo: "/avatar"
-    },
-    {
-      icon:'radio-button-off',
-      name:'Button',
-      redirecTo:'/button'
-    },
-    {
-      icon:'card',
-      name:'Card',
-      redirecTo:'/card'
-    },
-    {
-      icon:'checkmark-circle',
-      name:'CheckBox',
-      redirecTo:'/checkbox'
-    },
-    {
-      icon:'calendar-outline',
-      name:'DateTime',
-      redirecTo:'/datetime'
-    },
-    {
-      icon:'car-outline',
-      name:'Fab',
-      redirecTo:'/fab'    
-    },
-    {
-      icon:'grid-outline',
-      name:'Grid',
-      redirecTo:'/grid'  
-    },
-    {
-      icon:'infinite-outline',
-      name:'Infinite',
-      redirecTo: '/infinite'
-    },
-    {
-      icon:'hammer-outline',
-      name:'Input',
-      redirecTo: '/input'
-    },
-    {
-      icon:'list-outline',
-      name:'List',
-      redirecTo: '/list'
-    }
-  ];
+  componentes: Observable<Componente[]> = null;
 
-  constructor() { }
+  constructor(private _servicio : DataService) { }
 
 
   ngOnInit() {
+
+    this.componentes = this._servicio.getMenu();
+
+    console.log(this.componentes);
+
   }
 
-}
-
-interface Componentes{
-  icon: string;
-  name: string;
-  redirecTo: string;
 }
