@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { SegmentPageRoutingModule } from './segment-routing.module';
 
 import { SegmentPage } from './segment.page';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SegmentPageRoutingModule
+    SegmentPageRoutingModule,
+    PipesModule
   ],
   declarations: [SegmentPage]
 })
