@@ -15,9 +15,13 @@
                     <ion-menu-toggle *ngFor="let c of componentes | async">
                         <ion-item>
                             <ion-label>
-                                <ion-item detail="true" [routerLink]="c.redirecTo"></ion-item>
+                                <!-- <ion-item detail="true" [routerLink]="c.redirecTo"></ion-item>
                                 <ion-icon [name]="c.icon" slot="start"></ion-icon>
-                                <ion-label>{{c.name}}</ion-label>
+                                <ion-label>{{c.name}}</ion-label> -->
+                                <ion-item [routerLink]="c.redirecTo">
+                                    <ion-icon slot="start" [name]="c.icon" color="primary"></ion-icon>
+                                    {{c.name}}
+                                </ion-item>
                             </ion-label>
                         </ion-item>
 

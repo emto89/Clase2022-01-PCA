@@ -77,5 +77,30 @@
         "icon": "phone-portrait-outline",
         "name": "Modal",
         "redirecTo": "/modal"
+    },
+    {
+        "icon": "tablet-portrait-outline",
+        "name": "PopOver",
+        "redirecTo": "/popover"
+    },
+    {
+        "icon": "code-working-outline",
+        "name": "Progress",
+        "redirecTo": "/progress"
+    },
+    {
+        "icon": "arrow-down-circle-outline",
+        "name": "Refresher",
+        "redirecTo": "/refresher"
+    },
+    {
+        "icon": "search-outline",
+        "name": "Search",
+        "redirecTo": "/search"
+    },
+    {
+        "icon": "copy-outline",
+        "name": "Segment",
+        "redirecTo": "/segment"
     }
 ]
