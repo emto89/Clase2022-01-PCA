@@ -1,0 +1,9 @@
+<ion-content [fullscreen]="true">
+
+    <ion-slides mode="ios" pager="ios" scrollbar="ios">
+        <ion-slide *ngFor="let pelicula of peliculasRecientes">
+            <h1>{{pelicula.backdrop_path}}</h1>
+        </ion-slide>
+    </ion-slides>
+
+</ion-content>
