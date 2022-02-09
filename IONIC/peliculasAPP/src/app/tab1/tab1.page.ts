@@ -10,6 +10,7 @@ import { Pelicula } from '../interfaces/interface';
 export class Tab1Page {
 
   peliculasRecientes: Pelicula[] = [];
+  populares: Pelicula[] = [];
 
 
   constructor(private moviesService: MoviesService) {}
@@ -18,6 +19,18 @@ export class Tab1Page {
     this.moviesService.getFeature().subscribe(  resp=>{
       this.peliculasRecientes = resp.results;
     })
+
+    this.getPopulares();
+  }
+
+  getPopulares(){
+    this.moviesService.getPopulares().subscribe(
+      resp=>{
+        // console.log('Populares', resp.results);
+        const arrTemp = [...this.populares,...resp.results];
+        this.populares = arrTemp;
+      }
+    )
   }
 
 }
