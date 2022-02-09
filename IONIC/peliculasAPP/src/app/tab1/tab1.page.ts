@@ -11,6 +11,7 @@ export class Tab1Page {
 
   peliculasRecientes: Pelicula[] = [];
 
+
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit(): void {

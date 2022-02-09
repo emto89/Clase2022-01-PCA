@@ -5,13 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { PipeModule } from '../pipes/pipes.module';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+    PipeModule,
+    ComponentsModule
   ],
   declarations: [Tab1Page]
 })
