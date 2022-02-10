@@ -33,4 +33,8 @@ export class Tab1Page {
     )
   }
 
+  cargarMas(){
+    this.getPopulares();
+  }
+
 }

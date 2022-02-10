@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { RespuestaMDB } from '../interfaces/interface';
+import { PeliculaDetalle, RespuestaMDB, RespuestaCredits } from '../interfaces/interface';
 
 const URL = environment.url;
 const apiKey = environment.apiKey;
@@ -51,4 +51,13 @@ export class MoviesService {
 
     return this.ejecutarQuery<RespuestaMDB>(query);
   }
+
+  getPeliculaDetalle( id: string ){
+    return this.ejecutarQuery<PeliculaDetalle>(`/movie/${id}?a=1`);
+    
+  }
+  getActoresPelicula( id: string ){
+    return this.ejecutarQuery<RespuestaCredits>(`/movie/${id}/credits?a=1`);
+  }
+
 }
