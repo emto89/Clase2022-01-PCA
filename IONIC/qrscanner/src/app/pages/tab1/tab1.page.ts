@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { DataLocalService } from '../../services/data-local.service';
 
 @Component({
   selector: 'app-tab1',
@@ -8,7 +9,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 })
 export class Tab1Page {
 
-  constructor(private barcodeScanner: BarcodeScanner) {}
+  constructor(private barcodeScanner: BarcodeScanner,
+    private dataLocal: DataLocalService) {}
 
   swiperOpt = {
     allowSlidePrev: false,
@@ -22,6 +24,7 @@ export class Tab1Page {
   }
   ionViewWillEnter(){
     // console.log("viewWillEnter");
+    this.scan();
   }
   ionViewWillLeaver(){
     // console.log("viewWillLeave");
@@ -31,9 +34,14 @@ export class Tab1Page {
   scan(){
     this.barcodeScanner.scan().then( barcodeData =>{
         console.log("Barcode Data", barcodeData);
+        if(!barcodeData.cancelled){
+            
+        }
     })
     .catch(err =>{
-       console.log("err", err);
+       console.log("err:", err);
+      //  this.dataLocal.guardarRegistros('QRCode','https://github.com/phonegap/phonegap-plugin-barcodescanner');
+          this.dataLocal.guardarRegistros('QRCode','geo:10.986592900000002,-74.81912623325198');
     });
   }
 }
