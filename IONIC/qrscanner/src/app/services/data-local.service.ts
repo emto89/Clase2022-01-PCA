@@ -94,7 +94,7 @@ export class DataLocalService {
         console.log(`${this.file.dataDirectory}/registros.csv`);
         
         const email = {
-          to: 'max@mustermann.de',
+          to: 'mdiaz@pca.edu.co',
           // cc: 'erika@mustermann.de',
           // bcc: ['john@doe.com', 'jane@doe.com'],
           attachments: [
